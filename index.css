@@ -1,0 +1,288 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --text-scale: 1rem;
+    font-size: var(--text-scale);
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* Deep warm charcoal — maximum legibility on any background */
+    color: #1a0f0a;
+  }
+
+  .dark body {
+    color: #fef3e2;
+  }
+
+  h1, h2, h3, .font-serif-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+
+  /* Make sure all form inputs have dark readable text */
+  input, textarea, select {
+    color: #1a0f0a !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+  }
+
+  .dark input, .dark textarea, .dark select {
+    color: #fef3e2 !important;
+    background: rgba(30, 15, 8, 0.85) !important;
+  }
+
+  /* Labels always dark and bold */
+  label {
+    color: #431407 !important;
+    font-weight: 600;
+  }
+
+  .dark label {
+    color: #fed7aa !important;
+  }
+}
+
+/* ==============================================================================
+   SUNSET LIQUID GLASS THEME — HIGH CONTRAST EDITION
+   Muted amber-peach background + strongly opaque glass cards = readable text
+   ============================================================================== */
+
+/* Background: softer/more muted so text contrast is guaranteed */
+.bg-liquid-light {
+  /* Softer peach-to-amber — less vivid orange so text pops */
+  background: linear-gradient(145deg, #fff7ed 0%, #ffedd5 30%, #fed7aa 65%, #fdba74 100%);
+}
+
+.bg-liquid-dark {
+  background: linear-gradient(145deg, #1c0f0a 0%, #150907 50%, #080302 100%);
+}
+
+/* ==============================================================================
+   GLASS WINDOW — Strongly opaque so text inside is always legible
+   ============================================================================== */
+.glass-window {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  border: 1.5px solid rgba(255, 255, 255, 0.80);
+  box-shadow:
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.9),
+    0 20px 50px -10px rgba(124, 45, 18, 0.20);
+}
+
+.dark .glass-window {
+  background: rgba(28, 14, 8, 0.82);
+  border: 1.5px solid rgba(255, 200, 150, 0.18);
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.15),
+    0 25px 50px -10px rgba(0, 0, 0, 0.70);
+}
+
+/* ==============================================================================
+   GLASS CARDS — High opacity so body text sits on near-white background
+   ============================================================================== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1.5px solid rgba(255, 255, 255, 0.70);
+  box-shadow:
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.8),
+    0 8px 28px -4px rgba(124, 45, 18, 0.13);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .glass-card {
+  background: rgba(35, 18, 10, 0.82);
+  border: 1.5px solid rgba(255, 200, 140, 0.14);
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.12),
+    0 10px 28px -4px rgba(0, 0, 0, 0.55);
+}
+
+.glass-card:hover {
+  transform: translateY(-3px) scale(1.004);
+  background: rgba(255, 255, 255, 0.90);
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow:
+    inset 0 1px 2px 0 rgba(255, 255, 255, 1),
+    0 18px 40px -4px rgba(154, 52, 18, 0.22);
+}
+
+.dark .glass-card:hover {
+  background: rgba(48, 24, 14, 0.90);
+  border-color: rgba(255, 200, 150, 0.28);
+}
+
+/* ==============================================================================
+   GLASS PILL BUTTONS
+   ============================================================================== */
+.glass-pill-btn {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+  transition: all 0.2s ease-in-out;
+  color: #431407;
+  font-weight: 600;
+}
+
+.dark .glass-pill-btn {
+  background: rgba(40, 20, 10, 0.78);
+  border: 1.5px solid rgba(255, 200, 140, 0.18);
+  color: #fed7aa;
+}
+
+.glass-pill-btn:hover {
+  transform: scale(1.04);
+  background: rgba(255, 255, 255, 0.90);
+  box-shadow: 0 6px 20px rgba(194, 65, 12, 0.18);
+}
+
+.dark .glass-pill-btn:hover {
+  background: rgba(58, 28, 14, 0.92);
+}
+
+/* ==============================================================================
+   PRIMARY ACTION BUTTON
+   ============================================================================== */
+.btn-primary-white {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px -3px rgba(194, 65, 12, 0.40);
+  font-weight: 700;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary-white:hover {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff !important;
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 14px 30px -3px rgba(194, 65, 12, 0.45);
+}
+
+.dark .btn-primary-white {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff !important;
+}
+
+/* ==============================================================================
+   NAVBAR ACTIVE TAB
+   ============================================================================== */
+.nav-link-active {
+  position: relative;
+}
+
+.nav-link-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 15%;
+  right: 15%;
+  height: 2.5px;
+  background: #c2410c;
+  border-radius: 9999px;
+  box-shadow: 0 0 10px rgba(194, 65, 12, 0.6);
+}
+
+.dark .nav-link-active::after {
+  background: #fb923c;
+  box-shadow: 0 0 10px rgba(251, 146, 60, 0.7);
+}
+
+/* ==============================================================================
+   TEXT CONTRAST UTILITIES
+   ============================================================================== */
+
+/* Force readable text inside glass panels */
+.glass-window p,
+.glass-window span:not([class*="badge"]):not([class*="pill"]),
+.glass-window li,
+.glass-window td,
+.glass-card p,
+.glass-card span:not([class*="badge"]):not([class*="pill"]),
+.glass-card li {
+  color: inherit;
+}
+
+/* Strong readable headings inside cards */
+.glass-card h2,
+.glass-card h3,
+.glass-window h2,
+.glass-window h3 {
+  color: #431407;
+}
+
+.dark .glass-card h2,
+.dark .glass-card h3,
+.dark .glass-window h2,
+.dark .glass-window h3 {
+  color: #fed7aa;
+}
+
+/* Muted secondary text – still readable */
+.text-muted-glass {
+  color: #78350f;
+}
+
+.dark .text-muted-glass {
+  color: #fcd9a8;
+}
+
+/* ==============================================================================
+   BLOB MORPHING KEYFRAMES
+   ============================================================================== */
+@keyframes morphBlob1 {
+  0%   { transform: translate(0px, 0px) scale(1) rotate(0deg); border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; }
+  33%  { transform: translate(35px, -25px) scale(1.06) rotate(35deg); border-radius: 45% 55% 60% 40% / 60% 40% 50% 50%; }
+  66%  { transform: translate(-25px, 20px) scale(0.95) rotate(-20deg); border-radius: 50% 50% 40% 60% / 40% 60% 55% 45%; }
+  100% { transform: translate(0px, 0px) scale(1) rotate(0deg); border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; }
+}
+
+@keyframes morphBlob2 {
+  0%   { transform: translate(0px, 0px) scale(1) rotate(0deg); border-radius: 50% 50% 40% 60% / 60% 40% 60% 40%; }
+  33%  { transform: translate(-30px, 30px) scale(1.1) rotate(-40deg); border-radius: 60% 40% 50% 50% / 40% 60% 45% 55%; }
+  66%  { transform: translate(25px, -20px) scale(0.92) rotate(25deg); border-radius: 40% 60% 55% 45% / 55% 45% 40% 60%; }
+  100% { transform: translate(0px, 0px) scale(1) rotate(0deg); border-radius: 50% 50% 40% 60% / 60% 40% 60% 40%; }
+}
+
+@keyframes morphBlob3 {
+  0%   { transform: translate(0px, 0px) scale(1); border-radius: 55% 45% 60% 40% / 45% 55% 45% 55%; }
+  50%  { transform: translate(20px, 25px) scale(1.08) rotate(50deg); border-radius: 40% 60% 45% 55% / 55% 45% 60% 40%; }
+  100% { transform: translate(-20px, -15px) scale(0.96) rotate(-30deg); border-radius: 55% 45% 60% 40% / 45% 55% 45% 55%; }
+}
+
+.animate-blob-1 { animation: morphBlob1 16s ease-in-out infinite alternate; }
+.animate-blob-2 { animation: morphBlob2 18s ease-in-out infinite alternate; animation-delay: -4s; }
+.animate-blob-3 { animation: morphBlob3 20s ease-in-out infinite alternate; animation-delay: -8s; }
+.animate-blob-4 { animation: morphBlob1 22s ease-in-out infinite alternate; animation-delay: -12s; }
+.animate-blob-5 { animation: morphBlob2 15s ease-in-out infinite alternate; animation-delay: -6s; }
+.animate-blob-6 { animation: morphBlob3 19s ease-in-out infinite alternate; animation-delay: -2s; }
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob-1, .animate-blob-2, .animate-blob-3,
+  .animate-blob-4, .animate-blob-5, .animate-blob-6 {
+    animation: none !important;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* Fallback for browsers without backdrop-filter */
+@supports not (backdrop-filter: blur(1px)) {
+  .glass-window { background: #fff3e0; }
+  .dark .glass-window { background: #1c0f0a; }
+  .glass-card { background: #fff7ed; }
+  .dark .glass-card { background: #24120c; }
+}
+
+/* Subtle gloss streak */
+.streak-line {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  height: 1px;
+}
